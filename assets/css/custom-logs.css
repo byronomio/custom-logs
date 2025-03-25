@@ -1,0 +1,264 @@
+/* Base Styles */
+.custom-logs-wrap {
+  max-width: 100%;
+  margin: 10px 20px 0 2px;
+  box-sizing: border-box;
+
+  form.custom-logs-form {
+    padding-top: 10px;
+  }
+}
+
+/* Grid Layout */
+.custom-logs-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  width: 100%;
+}
+
+.custom-logs-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.custom-logs-viewer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  .log-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    width: 100%;
+
+    .log-column {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+}
+
+/* Sections */
+.custom-logs-section,
+.custom-logs-viewer-section {
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 4px;
+  padding: 16px;
+  width: 100%;
+
+  h2 {
+    font-size: 18px;
+    margin: 0 0 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dcdcde;
+    color: #1d2327;
+  }
+}
+
+/* Control Groups */
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-weight: 500;
+    font-size: 14px;
+    color: #1d2327;
+  }
+}
+
+/* Input Groups */
+.input-group {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+
+  input,
+  select {
+    flex: 1;
+    min-width: fit-content;
+    height: 36px;
+    border: 1px solid #8c8f94;
+    border-radius: 3px;
+    background-color: #fff;
+    font-size: 14px;
+    width: 100%;
+    max-width: unset;
+    &:focus {
+      border-color: #2271b1;
+      box-shadow: 0 0 0 1px #2271b1;
+      outline: 2px solid transparent;
+    }
+  }
+}
+
+/* Buttons */
+.custom-logs-btn {
+  height: 36px;
+  padding: 0 12px;
+  border-radius: 3px;
+  border: 1px solid;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  text-align: center;
+  transition: all 0.15s ease-in-out;
+  box-sizing: border-box;
+  min-width: 100px;
+
+  &.primary {
+    background-color: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+
+    &:hover {
+      background-color: #135e96;
+      border-color: #135e96;
+    }
+  }
+
+  &.secondary {
+    background-color: #f6f7f7;
+    border-color: #dcdcde;
+    color: #2271b1;
+
+    &:hover {
+      background-color: #e0e0e0;
+    }
+  }
+
+  &.danger {
+    background-color: #d63638;
+    border-color: #d63638;
+    color: #fff;
+
+    &:hover {
+      background-color: #b32d2e;
+      border-color: #b32d2e;
+    }
+  }
+
+  &:disabled {
+    background-color: #e0e0e0;
+    border-color: #dcdcde;
+    color: #646970;
+    cursor: not-allowed;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: #e0e0e0;
+      border-color: #dcdcde;
+    }
+  }
+}
+
+.viewer-header {
+  margin-bottom: 16px;
+}
+
+.viewer-content {
+  height: 300px;
+  max-height: 400px;
+  overflow-y: auto;
+  background: #f6f7f7;
+  border: 1px solid #dcdcde;
+  border-radius: 3px;
+  padding: 12px;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.5;
+
+  pre {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+}
+
+.no-logs {
+  color: #646970;
+  font-style: italic;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Pagination */
+.viewer-pagination {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.description {
+  font-size: 13px;
+  color: #646970;
+  margin-top: 4px;
+}
+
+.page-count {
+  margin: 0 10px;
+  font-size: 14px;
+  color: #1d2327;
+  line-height: 36px;
+}
+
+.accordion {
+  margin-bottom: 16px;
+  background: #fff;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+
+  &[open] .accordion-header {
+    background: #e0e0e0;
+  }
+
+  .accordion-header {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px 16px;
+    color: #1d2327;
+    cursor: pointer;
+    background: #f6f7f7;
+    border-bottom: 1px solid #dcdcde;
+    display: block;
+  }
+
+  .accordion-content {
+    padding: 16px;
+  }
+
+  .control-group {
+    margin-top: 0;
+  }
+
+  pre {
+    background: #f6f7f7;
+    padding: 12px;
+    border: 1px solid #dcdcde;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 13px;
+    overflow-x: auto;
+  }
+}
