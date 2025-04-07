@@ -52,10 +52,7 @@ jQuery(document).ready(function ($) {
                     if (force || !lastUpdate[logType] || fileMtime > lastUpdate[logType]) {
                         lastUpdate[logType] = fileMtime;
 
-                        // Add loading state
-                        $contentContainer.html('<p class="custom-logs-loading">Loading logs...</p>');
-
-                        // Load the actual content
+                        // Load the actual content without showing loading message
                         $.ajax({
                             url: customLogsAjax.ajax_url,
                             method: 'POST',
